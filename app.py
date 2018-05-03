@@ -63,8 +63,9 @@ def samples(sample):
 
 
 if __name__ == '__main__':
-    app.run()
+
+    #app.run(debug=True)
     # Bind to PORT if defined, otherwise default to 5000.
-    # port = int(os.environ.get('PORT', 5000))
-    # app.run(host='0.0.0.0', port=port)
-    # app.run()
+    env_port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=env_port)
+
