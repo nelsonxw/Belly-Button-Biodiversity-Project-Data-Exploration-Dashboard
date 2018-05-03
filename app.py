@@ -25,20 +25,26 @@ def home():
 
 @app.route("/names")
 def names():
-    df = pd.read_csv("datasets\\belly_button_biodiversity_samples.csv")
+    file_name = os.path.join("datasets\\","belly_button_biodiversity_samples.csv")
+    df = pd.read_csv(file_name)
+    # df = pd.read_csv("datasets\\belly_button_biodiversity_samples.csv")
     sample_data = df.set_index("otu_id").keys()
     return jsonify(sample_data.tolist())
 
 @app.route("/otu")
 def otu_descriptions():
-    df = pd.read_csv("datasets\\belly_button_biodiversity_otu_id.csv")
+    file_name = os.path.join("datasets\\","belly_button_biodiversity_otu_id.csv")
+    df = pd.read_csv(file_name)
+    # df = pd.read_csv("datasets\\belly_button_biodiversity_otu_id.csv")
     otu_descriptions = df["lowest_taxonomic_unit_found"]
     return jsonify(otu_descriptions.tolist())
 
 @app.route("/metadata/<sample>")
 def metadata(sample):
     sampleID = sample[3:]
-    df = pd.read_csv("datasets\\Belly_Button_Biodiversity_Metadata.csv")
+    file_name = os.path.join("datasets\\","Belly_Button_Biodiversity_Metadata.csv")
+    df = pd.read_csv(file_name)
+    # df = pd.read_csv("datasets\\Belly_Button_Biodiversity_Metadata.csv")
     meta_data = df[df["SAMPLEID"] == int(sampleID)][["SAMPLEID","ETHNICITY","GENDER","AGE","BBTYPE","LOCATION"]]
     return jsonify(meta_data.to_dict("records"))
 
@@ -46,14 +52,21 @@ def metadata(sample):
 @app.route("/wfreq/<sample>")
 def washFrequency(sample):
     sampleID = sample[3:]
-    df = pd.read_csv("datasets\\Belly_Button_Biodiversity_Metadata.csv")
+    file_name = os.path.join("datasets\\","Belly_Button_Biodiversity_Metadata.csv")
+    df = pd.read_csv(file_name)
+    # df = pd.read_csv("datasets\\Belly_Button_Biodiversity_Metadata.csv")
     wash_data = df[df["SAMPLEID"] == int(sampleID)]["WFREQ"].astype(int)
     return jsonify(wash_data.tolist())
 
 @app.route("/samples/<sample>")
 def samples(sample):
-    df_samples = pd.read_csv("datasets\\belly_button_biodiversity_samples.csv")
-    df_otu = pd.read_csv("datasets\\belly_button_biodiversity_otu_id.csv")
+    file_name1 = os.path.join("datasets\\","belly_button_biodiversity_samples.csv")
+    df_samples = pd.read_csv(file_name1)
+    
+    file_name2 = os.path.join("datasets\\","belly_button_biodiversity_otu_id.csv")
+    df_otu = pd.read_csv(file_name2)
+    # df_samples = pd.read_csv("datasets\\belly_button_biodiversity_samples.csv")
+    # df_otu = pd.read_csv("datasets\\belly_button_biodiversity_otu_id.csv")
     df = df_samples.merge(df_otu,how="left")
     df = df[df[sample] > 0]
     samples = df[["otu_id","lowest_taxonomic_unit_found",sample]].sort_values(sample,ascending=False)
