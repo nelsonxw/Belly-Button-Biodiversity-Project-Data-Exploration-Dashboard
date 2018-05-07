@@ -198,4 +198,4 @@ function getData(route) {
     show_metadata(route);
     updateCharts(route);
     draw_gaugeChart(route);
-}
+} 
