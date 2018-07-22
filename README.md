@@ -1,4 +1,4 @@
-# The Belly Button Biodiversity Project Data Exploration Dashboard  
+## The Belly Button Biodiversity Project Data Exploration Dashboard  
 
 Link to web application: https://interactive-viz-dashboard.herokuapp.com/  
 <img src="/images/Capture.PNG" width="800"> 
