@@ -17,7 +17,7 @@ HTML, CSS, Bootstrap, JavaScript, Plotly.js, Pandas, Flask, Heruko
 + Used Flask to set up routes for different datasets, including sample data, OTU(operational taxonomic unit), Meta data.  Used Pandas to read data, manipulate it and output filtered data as needed. Jsonify the output and make it ready for consumptions by JavaScript codes.
 + Used Plotly.d3.json function to populate selection field and show meta data
 ```javascript
-/*populute selection options*/
+/*populate selection options*/
 var name_url = "/names";
 /*get sample names from route "names"*/
 Plotly.d3.json(name_url, function(error, data) {
