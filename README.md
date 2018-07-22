@@ -1,7 +1,11 @@
-# Interactive Visualizations and Dashboards Project  
-### Project Purpose:
+# The Belly Button Biodiversity Project Data Exploration Dashboard  
 
-To create an interacive dashboard  and visualizations on the web that allows uses to explore [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/). 
+Link to web application: https://interactive-viz-dashboard.herokuapp.com/  
+<img src="/images/Capture.PNG" width="800"> 
+
+### Objectives:
+
+To create an interacive dashboard on the web that allows uses to explore the data from [Belly Button Biodiversity Project](http://robdunnlab.com/projects/belly-button-biodiversity/). 
 
 
 ### Project Output:
