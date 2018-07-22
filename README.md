@@ -13,9 +13,9 @@ To create an interacive dashboard on the web that allows uses to explore the dat
 HTML, CSS, Bootstrap, JavaScript, Plotly.js, Pandas, Flask, Heruko
 
 ### Major Steps:
-+ Used HTML, CSS and Bootstrap to build the index page which includes a pie chart, bubble chart, gauge chart and user input section.
-+ Used Flask to set up routes for different datasets, including sample data, OTU(operational taxonomic unit), Meta data.  Used Pandas to read data, manipulate it and output filtered data as needed. Jsonify the output and make it ready for consumptions by JavaScript codes.
-+ Used Plotly.d3.json function to populate selection field and show meta data
+1. Used HTML, CSS and Bootstrap to build the index page which includes a pie chart, bubble chart, gauge chart and user input section.
+2. Used Flask to set up routes for different datasets, including sample data, OTU(operational taxonomic unit), Meta data.  Used Pandas to read data, manipulate it and output filtered data as needed. Jsonify the output and make it ready for consumptions by JavaScript codes.
+3. Used Plotly.d3.json function to populate selection field and show meta data
 ```javascript
 /*populate selection options*/
 var name_url = "/names";
@@ -61,7 +61,7 @@ function show_metadata (route) {
     });
 }
 ```
-+ Used Plotly.newPlot function to plot pie chart, bubble chart and gauge chart
+4. Used Plotly.newPlot function to plot pie chart, bubble chart and gauge chart
 ```javascript
 /*Plot pie chart and bubble chart*/
 /*get sample data from route "samples/sample name"*/
@@ -183,7 +183,7 @@ function draw_gaugeChart(route) {
 	});
 }
 ```
-+ Created a function to use Plotly.restyle function to update charts when user selections are changed.
+5. Created a function to use Plotly.restyle function to update charts when user selections are changed.
 ```javascript
 /*update the plot with new data*/
 function updateCharts(route) {
