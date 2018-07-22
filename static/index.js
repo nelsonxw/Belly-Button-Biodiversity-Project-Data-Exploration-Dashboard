@@ -1,4 +1,4 @@
-/*populute selection options*/
+/*populate selection options*/
 var name_url = "/names";
 /*get sample names from route "names"*/
 Plotly.d3.json(name_url, function(error, data) {
