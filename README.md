@@ -1,6 +1,7 @@
 ## The Belly Button Biodiversity Project Data Exploration Dashboard  
 
 Link to web application: https://interactive-viz-dashboard.herokuapp.com/  
+
 <img src="/images/Capture_1.PNG" width="800">  
 <img src="/images/Capture_2.PNG" width="800">
 
